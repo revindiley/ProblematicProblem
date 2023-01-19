@@ -90,12 +90,12 @@ namespace ProblematicProblem
                              Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
                              Console.WriteLine("Pick something else!");
                              activities.Remove(randomActivity);
-                             //randomNumber = rng.Next(activities.Count);
-                             //randomActivity = activities[randomNumber];
+                             randomNumber = rng.Next(activities.Count);
+                             randomActivity = activities[randomNumber];
                         }
                 Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                         Console.WriteLine();
-                cont = bool.Parse(Console.ReadLine());
+                cont = (Console.ReadLine().ToLower() == "redo") ? true : false;
             }
         }
 
